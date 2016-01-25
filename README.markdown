@@ -139,9 +139,8 @@ Now we can rollout some of the machines:
 
 Look around the mashines. For example check for running services with:
 
-    service --status-all 2>&1 | egrep '(bird6|openvpn|fastd|alfred|bat)'
-    pgrep -lf '(bird6|openvpn|fastd|alfred|bat)'
-    
+    systemctl status bird6 openvpn fastd alfred bat
+
 In case the ssh login doesn't work: Vagrant creates all VMs with the user "vagrant" and the standard password "vagrant". 
 
 Vagrant uses the configuration in `Vagrantfile` to create each machine. In our `Vagrantfile` there is defined that on each machine the shell script `bootstrap.sh` is executed on install, so if you like to change the way machines are deployed, you can manipulate the `bootstrap.sh`.
