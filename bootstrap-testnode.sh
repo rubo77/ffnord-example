@@ -53,10 +53,10 @@ export DEBIAN_FRONTEND=noninteractive
 #Reconfigure apt so that it does not install additional packages
 echo 'APT::Install-Recommends "0" ; APT::Install-Suggests "0" ; '>>/etc/apt/apt.conf
 
-apt-get install --no-install-recommends -y puppet git tcpdump mtr-tiny vim unzip zip
+apt-get install --no-install-recommends -y puppet git tcpdump mtr-tiny vim unzip zip apt-transport-https
 
 # PPA for fastd and batman-adv
-echo "deb http://repo.universe-factory.net/debian/ sid main" > /etc/apt/sources.list.d/batman-adv-universe-factory.net.list
+echo "deb https://repo.universe-factory.net/debian/ sid main" > /etc/apt/sources.list.d/batman-adv-universe-factory.net.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16EF3F64CB201D9C
 apt-get update
 
